@@ -19,13 +19,14 @@ class Organizations(models.Model):
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='pending')
 
 
-#organization staff anafanya registration ya package kwa hizi input
+#Organization staff anafanya registration ya package kwa hizi input
 class PackageRegistration(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='packages')
     package_name = models.CharField(max_length=255)
     discriptions = models.CharField(max_length=255)
     link = models.CharField(max_length=255)
     price = models.CharField(max_length=255)
+
 
 
 #user atafanya booking ya package husika
@@ -38,4 +39,3 @@ class BookingPackage(models.Model):
     start_date = models.DateField()
     participant_number = models.CharField(max_length=255)
     special_requirements = models.CharField(max_length=255)
-    
